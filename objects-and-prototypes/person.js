@@ -164,7 +164,7 @@ var button3 = new RectangularButton(4, 2, 'delete', function() { return 'deleted
 
 var designer = (function () {
   function draw() {
-    console.log('Designer is drawing now...');
+    return 'drawing ....';
   }
   return function () {
     this.draw = draw;
@@ -179,7 +179,7 @@ var designer = (function () {
 
 var developer = (function () {
   function code() {
-    console.log('Developer is coding now.');
+    return 'coding ...';
   }
   return function () {
     this.code = code;
@@ -194,7 +194,7 @@ var developer = (function () {
 
 var person = (function () {
   function breathe () {
-    console.log('Person is breathing');
+    return 'breathing ...';
   }
   function getName () {
     return this.name;
@@ -220,9 +220,8 @@ developer.call(SuperPerson.prototype);
 designer.call(SuperPerson.prototype);
 
 
-var kim = new SuperPerson('Kim Johnson');
-var tom = new SuperPerson('Tom Cruise');
-console.log(kim.getName());
-console.log(tom.draw(), tom.getName());
+var kim = new SuperPerson('Jane Doe');
+console.log(kim.getName(), kim.breathe(), kim.code(), kim.draw());
+
 
 
